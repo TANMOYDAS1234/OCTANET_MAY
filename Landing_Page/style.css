@@ -9,14 +9,16 @@
   background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(images/background.jpg);
   background-position: center;
   background-size: cover;
-  padding-left: 8%;
-  padding-right: 8%;
+  /* padding-left: 8%;
+  padding-right: 8%; */
   box-sizing: border-box;
 }
 .navbar{
-  height:12%;
+  height:10vh;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 5vw;
 }
 .logo{
   width:50px;
@@ -28,54 +30,74 @@
   margin-left: 40px;
 }
 nav{
-  flex:1;
-  text-align: right;
+  /* flex:1;
+  text-align: right; */
 }
 nav ul li{
   list-style: none;
   display: inline-block;
   margin-left: 60px;
-}
-nav ul li a{
-  text-decoration: none;
-  color: white;
-  font-size: 13px;
-}
-.row{
-  display:flex;
-  height: 85%;
-  align-items: center;
-}
-.col{
-  flex-basis: 50%;
-}
-h1{
-  color:white;
-  font-size: 50px;
-}
-p{
-  color:white;
-  font-size: 15px;
-  line-height: 20px;
-}
-button{
-  width:180px;
-  color:black;
-  font-size: 12px;
-  padding: 12px 0;
-  background: white;
-  border-radius: 20px;
-  outline: none;
-  margin-top: 30px;
   cursor: pointer;
-  transition: transform 0.5s;
+  transition: transform 1s;
 }
 button:hover{
   transform: translateY(-10px);
 }
+nav ul li a{
+  text-decoration: none;
+  color: white;
+  font-size: 1.6vw;
+}
+.row{
+  display:flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5vw;
+}
+.col{
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 5vw;
+}
+h1{
+  color:white;
+  font-size: 5vw;
+}
+p{
+  color:white;
+  font-size: 1.5vw;
+  line-height: 2vw;
+}
+button{
+  width:10vw;
+  /* color:black; */
+  font-size: 1.5vw;
+  padding: 12px 0;
+  /* background: white; */
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  outline: none;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: transform 1s;
+}
+button:hover{
+  transform: translateY(-10px);
+}
+.col1{
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  flex-direction: row;
+}
 .card{
-  width:200px;
-  height: 230px;
+  width: 17vw;
+    height: 14vw;
   display: inline-block;
   border-radius: 10px;
   padding: 15px 25px;
@@ -84,7 +106,7 @@ button:hover{
   margin: 10px 15px;
   background-position: center;
   background-size: cover;
-  transition: transform 0.5s;
+  transition: transform 1s;
 }
 .card1{
   background-image: url(images/pic1.jpg);
@@ -111,20 +133,103 @@ h5{
   line-height: 10px;
   text-shadow: 0 0 15px black;
 }
-@media screen and (max-width:700px){
-  .col1{
-    margin-top: 550px;
-    flex-basis: 100%;
+.menu-icon{
+  display: none;
+}
+.resp-nav{
+  display: none;
+}
+
+@media screen and (max-width:500px){
+  nav{
+    display: none;
   }
-  .row{
-    display: block;
+  .menu-icon{
+    display: initial;
   }
 }
-@media screen and (max-width:1200px){
+@media screen and (max-width:700px){
   .col1{
+    /* margin-top: 550px; */
+    /* flex-basis: 100%; */
+    height: 100vh;
+  }
+  .col{
+    width: 100%;
+    height: 90vh;
+    padding: 0;
+  }
+  nav ul li a{
+    font-size: 2vh;
+  }
+  h1{
+    font-size: 10vh;
+    margin-bottom: 4vh;
+  }
+  p{
+    font-size:  4vh;
+    line-height: 4vh;
+  }
+  button{
+    width:30vh;
+    font-size: 2.5vh;
+  }
+  .card{
+    width: 40vh;
+        height: 30vh;
+  }
+  .row{
+    display: block;
+  }
+  .resp-nav {
+    display: initial;
+    width: 100%;
+    height: 100vh;
+    left: -100%;
+    background-color: #eef5ff;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5vh;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)1s;
+}
+
+.resp-nav a {
+    font-family: Gillroy ExtraBold;
+    color: #222;
+    text-decoration: none;
+    font-size: 7.5vw;
+    cursor: pointer;
+    padding: 1vw 0vw;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)1s;
+}
+
+.resp-nav a:hover {
+    color: #007bff;
+    transform: scaleX(1.2);
+}
+
+.resp-nav i {
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    color: #000;
+    font-size: 6vw;
+    cursor: pointer;
+}
+}
+@media screen and (max-width:1040px){
+  /* .col1{
     flex-basis: 100%;
   }
   .row{
     display: block;
+  } */
+  .col1{
+    flex-basis: 70%;
   }
 }
